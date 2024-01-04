@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Match Ticket Booking</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div ng-app="myapp" ng-controller="ctrl" class="container">
+        <form class="form-content">
+            <h1>Ticket Booking</h1>
+            <input type="text" placeholder="Name" ng-model="name">
+            <input type="date">
+            <select name="country" ng-model="country">
+                <option value="default">Select Country</option>
+                <option value="India">India</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Zimbabwe">Zimbabwe</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="West Indies">West Indies</option>
+                <option value="Bangladesh">Bangladesh</option>
+            </select>
+            <select name="venue"  ng-model="venue">
+                <option value="default">Select Venue</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+            </select>
+            <select name="match" ng-model="match">
+                <option value="default">Select Match</option>
+                <option value="Ind vs Sri">Ind vs Sri</option>
+                <option value="Pak vs Aus">Pak vs Aus</option>
+                <option value="Ban vs Afg">Ban vs Afg</option>
+                <option value="SA vs WI">SA vs WI</option>
+                <option value="Neth vs Zim">Neth vs Zim</option>
+                <option value="Semi Final 1">Semi Final 1</option>
+                <option value="Semi Final 2">Semi Final 2</option>
+                <option value="Final">Final</option>
+            </select>
+            <select name="ticket" ng-model="ticket">
+                <option value="default">Select Ticket Class</option>
+                <option value="1st Class">1st Class</option>
+                <option value="2nd Class">2nd Class</option>
+                <option value="3rd Class">3rd Class</option>
+                <option value="Balcony">Balcony</option>
+                <option value="VIP">VIP</option>
+                <option value="VVIP">VVIP</option>
+            </select>
+            <button type="submit" ng-click="submit()">Book Now</button>
+        </form>
+        
+    </div>
+    
+    <div>
+    </div>
+    
+    <script>
+        var app = angular.module('myapp',[]);
+        app.controller('ctrl',function($scope){
+            $scope.name=" ";
+            $scope.submit = function(){
+                var value = Math.floor(Math.random()*1000000000)
+                alert("Name :"+$scope.name+"\nCountry :"+$scope.country)
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //    var app = angular.module('myapp', []);
+    //     app.controller('ctrl', function($scope) {
+    //         $scope.name = "";
+    //         $scope.submit = function() {
+    //             alert("Name: " + $scope.name + "\nCountry: " + $scope.country + "\nVenue: " + $scope.venue + "\nMatch: " + $scope.match + "\nTicket Class: " + $scope.ticket);
+    //         };
+    //     });
+    </script>
+</body>
+</html>
